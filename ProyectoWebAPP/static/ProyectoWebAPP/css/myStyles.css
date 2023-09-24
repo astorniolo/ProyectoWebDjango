@@ -1,0 +1,363 @@
+/* Importaciones */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,700;1,600&display=swap');
+
+/* normalizamos los estilos */
+/* cada navegador tien su estilo predef en user action*/
+/* normalizo pseudo clases before y after */
+*, 
+*::before
+*::after   {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box; /* come espacio hacia adentro*/
+}
+
+:root{
+    /* declaracion de variables globales */
+    /* DESIGN SISTEMS*/
+    /* Paleta de Colores*/
+    --primary-solid:#FF3333;
+    --primary-900:rgba(255, 51, 51, 0.9);
+    --primary-500:rgba(255, 51, 51, 0.5);
+    --primary-300:rgba(255, 51, 51, 0.3);
+
+    --secondary-solid:#1d84b5;
+    --secondary-900:rgba(29, 132, 181, 0.9);
+    --secondary-500:rgba(29, 132, 181, 0.5);
+    --secondary-300:rgba(29, 132, 181, 0.3);
+
+    --dark-solid:#1f1f1f;
+    --dark-900:rgba(31, 31, 31, 0.9);
+    --dark-500:rgba(31, 31, 31, 0.5);
+    --dark-300:rgba(31, 31, 31, 0.3);
+
+    --dark-bg-solid:#30343F;
+    --blue-bg-solid:rgb(43, 112, 144);;
+    --light-bg-solid:#FAFAFF;
+    --light-font-solid:#FFFFFF;
+
+    /* Tipografia */
+    --base-font:'Inter', sans-serif;
+    --alternative-font:'Raleway', sans-serif;
+
+    --font-display: 4.6em;
+    --font-jumbo: 3.8em;
+    --font-xlarge: 3em ;
+    --font-large: 2.4em ;
+    --font-medium: 1.8em ;
+    --font-small: 1.6em;
+    --font-xsmall: 1.4em;
+
+    /*Spacing */
+    /* 
+        Usamos "rem"  importantes estas Uddes de medidas en responsive 
+        1 rem = 10px  igual que  1em=10px (lo hackeamos) 
+        porque el "em" en ciertas circunstancias deja de valer 10px
+        en cambio el "rem" nunca
+        por lo que es buena practica usar fonts en em y spacings en rem
+    */
+    --spacing-128: 12.8rem ;
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;
+    --spacing-8: 0.8rem;
+
+}
+
+/* html raiz de todo y los heredables herando comp
+recordemos que deseamos em ó rem y 1em=16px
+em dificil de calcular  con regral de 3 simple 
+luego hakeamos!! esa medida !!!
+y la dejamos en 10px = 62.5% de 16px!!!
+el trabajar con em ayuda a dñ responsive
+em tiene exelentes ventajas en dñ responsive*/
+html{
+  font-family:var(--base-font);
+  font-size: 62.5%;
+  color:var(--dark-solid);  
+}
+
+
+body {
+  background: linear-gradient(rgba(69, 19, 56, 0.65), rgba(15, 41, 47, 0.396)), url("https://media.istockphoto.com/id/1352130137/es/foto/concepto-de-entrega-y-log%C3%ADstica.webp?b=1&s=612x612&w=0&k=20&c=YA5HPlNaLArtBfBGvileFiWgUB0t7k5EMnhr3aiZsCM=");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+header,footer {
+  font-family: var(--alternative-font);
+  color:var(--light-font-solid); 
+  font-size: var(--font-small); 
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--alternative-font);
+}
+
+p {
+  line-height: 1.75;
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.site-heading {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: var(--alternative-font);
+}
+
+.site-heading .site-heading-upper {
+  display: block;
+  font-size: var(--font-large);
+  font-weight: 800;
+}
+
+.site-heading .site-heading-lower {
+  font-size: var(--font-display);
+  font-weight: 300;
+  line-height: 4rem;
+}
+
+.page-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.section-heading {
+  text-transform: uppercase;
+}
+
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: var(--font-medium);
+  font-weight: 800;
+  padding-bottom:.5rem;
+
+}
+
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: var(--font-large);
+  font-weight: 100;
+}
+
+
+.section-heading .section-heading-under {
+  display: block;
+  font-size: var(--font-small);
+  text-transform: none;
+  font-weight: 300;
+  margin-top:.5rem;
+}
+
+.bg-faded {
+  background-color: var(--light-bg-solid);
+}
+
+#mainNav {
+  background-color: var(--dark-bg-solid);
+  font-family: var(--alternative-font);
+}
+
+#mainNav .navbar-brand {
+  color: var(--light-font-solid);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+}
+
+#mainNav .navbar-nav .nav-item.active .nav-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 0.9rem;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: underline;
+  }
+  #mainNav .navbar-nav .nav-item.active .nav-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+.btn-xl {
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.intro {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .intro .intro-img {
+    width: 75%;
+    float: left;
+  }
+  .intro .intro-text {
+    left: 600;
+    width: 60%;
+    margin-top: 3rem;
+    background-color: var(--blue-bg-solid);
+    color: cornsilk;
+    position: absolute;
+  }
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro .intro-text {
+    width: 45%;
+  }
+}
+
+.cta {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  /* background-color: rgb(242, 245, 240); */
+}
+
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: var(--dark-bg-solid);
+  color: cornsilk;
+}
+
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+.cta .cta-innerv {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 992px) {
+  .about-heading .about-heading-img {
+    position: relative;
+    z-index: 0;
+  }
+  .about-heading .about-heading-content {
+    margin-top: -5rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .product-item .product-item-title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -3rem;
+  }
+  .product-item .product-item-img {
+    position: relative;
+    z-index: 0;
+    max-width: 60vw;
+  }
+  .product-item .product-item-description {
+    position: relative;
+    z-index: 1;
+    margin-top: -3rem;
+    max-width: 50vw;
+  }
+}
+
+
+
+@media (min-width: 992px) {
+  .list-hours {
+    width: 50%;
+    font-size: 1.1rem;
+  }
+}
+
+.address strong {
+  font-size: 1.2rem;
+}
+
+.footer {
+   background-color: var(--dark-bg-solid);
+}
+
+
+
+.btn {
+  box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
+}
+
+
+
+.font-weight-light {
+  font-weight: 100 !important;
+}
+
+.mbtm{
+  padding-top: 5rem;
+}
+
+.mbt{
+  padding-top: 2rem;
+}
+
+.mbt1{
+  padding-top: 1.25rem;
+}
+
+a.link{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+a.link:hover{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.section-content{
+  font-family: 'Lora' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 28px !important;
+}
+
+ul.errorlist{
+  padding-top: .75rem;
+  font-style: italic;
+  color: red;
+}
